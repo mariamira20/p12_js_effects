@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P12_js_efects</title>
+    <script src=https://code.jquery.com/jquery-3.6.0.min.js></script>
+
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container{
+        width: 100%;
+        height: 100vh;
+        position: relative;
+       
+    }
+
+    
+
+    ul{
+      margin: 40px;
+      position: absolute;
+    }
+
+    ul li{
+        display: inline;
+        list-style-type: none;
+        padding: 20px;
+    }
+
+    ul li:hover {
+        box-shadow:  10px 10px yellow;
+    }
+
+   
+    #caixa1{
+        position: relative;
+        border: 2px solid white;
+        z-index: 10;
+        margin: auto;
+        display: flex;
+        background-color: lightgreen;
+        color: yellow;
+        width: 50%;
+        height: 50vh;
+    }
+
+    #caixa2{
+
+        border: 2px solid white;
+        z-index: 15;
+        top: 15vh;
+        width: 50%;
+        height: 50%;
+        left: 30%;
+        display: flex;
+        position: absolute;
+        background-color: coral;
+        color: lightgreen;
+    }
+
+    #caixa1:hover, #menu_fade li:hover{
+        box-shadow:  10px 10px yellow;
+    }
+
+    #caixa2:hover, #menu_slide li:hover{
+        box-shadow:  10px 10px lightgreen;
+    }
+
+    #fx, #fxs{
+        padding: 25px;
+        position: absolute;
+        right: 0;
+    }
+
+    #fx:hover{
+        color: coral;
+        background-color: lightyellow;
+    }
+
+    
+    #fxs:hover{
+        color: lightgreen;
+        background-color: coral;
+    }
+
+    #menu_fade{
+        margin: 40px;
+    }
+
+    #menu_slide{
+        margin: 140px 0 0 40px;
+        position: absolute;
+       top: 0;
+
+    }
+
+    #menu_slide li{
+        background-color: aquamarine;
+        color: coral;
+    }
+
+    #menu_fade li{
+        background-color: coral;
+        color: yellow;
+    }
+
+    h2{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center; 
+        align-items: center;
+    }
+
+  
+
+</style>
+<script>
+
+    $(document).ready(function(){
+        $("#fo, #fx").click(function(){
+            $("#caixa1").fadeOut(1000);
+    });
+
+    $("#fi").click(function(){
+        $("#caixa1").fadeIn(1000);
+    });
+
+    $("#ft").click(function(){
+        $("#caixa1").fadeToggle();
+    });
+
+    $("#su, #fxs").click(function(){
+        $("#caixa2").slideUp();
+    });
+
+    $("#sd").click(function(){
+        $("#caixa2").slideDown();
+    });
+
+    $("#st").click(function(){
+        $("#caixa2").slideToggle();
+    });
+
+
+    });
+
+</script>
+</head>
+<body>
+
+    <div class="container">
+
+        <ul id="menu_fade">
+            <li id="fi">Fade In</li>
+            <li id="fo"> Fade Out</li>
+            <li id="ft"> Fade Toggle</li>
+        </ul>
+
+        <div id="caixa1">
+            <p id="fx">X</p>
+            <h2>hola</h2>
+        </div>
+
+  
+
+    
+        <ul id="menu_slide">
+            <li id="sd">Slide Down</li>
+            <li id="su"> Slide Up</li>
+            <li id="st"> Slide Toggle</li>
+        </ul>
+
+        <div id="caixa2">
+            <p id="fxs">X</p>
+            <h2>hola</h2>
+        </div>
+
+    
+
+    </div>
+    
+
+</body>
+</html>
